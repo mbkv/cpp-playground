@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+endif(NOT CMAKE_BUILD_TYPE)
+
 # set the project name and version
 project(Playground VERSION 0.0.1)
 
@@ -14,6 +18,14 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 find_package(fmt)
+
+if (MSVC)
+    # warning level 4
+    add_compile_options(/W4)
+else()
+    # additional warnings
+    add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
 add_executable(playground src/main.cpp)
 target_link_libraries(playground ${CONAN_LIBS})

@@ -25,7 +25,17 @@ And then you can run your executible with:
 
 ```bash
 $ ./bin/playground
-Hello from utils!
 Hello from main!
+Hello from utils!
+```
+
+## FAQ
+
+### How do I add compile commands
+
+You can add in generic compile options in CMakeLists.txt with
+
+```cmakelists
+add_compile_options(-fno-exceptions -ffast-math -etc)
 ```
 
