@@ -25,6 +25,7 @@ if (MSVC)
 else()
     # additional warnings
     add_compile_options(-Wall -Wextra -Wpedantic)
+    set(CMAKE_CXX_FLAGS_DEBUG "-O0 ${CMAKE_CXX_FLAGS_DEBUG}")
 endif()
 
 add_executable(playground src/main.cpp)
