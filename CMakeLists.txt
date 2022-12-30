@@ -6,6 +6,9 @@ project(Playground VERSION 0.0.1)
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
 
+# compile commands
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
